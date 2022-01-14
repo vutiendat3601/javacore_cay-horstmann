@@ -2,11 +2,17 @@ package com.dat.chapter5_inheritance;
 
 import com.dat.chapter4_objectandclass.Address;
 
-public class Executive extends Manager {
+public class Student extends Person {
+    private int id;
     private Address address;
 
-    public Executive(String name, int age, int salary, int bonus) {
-        super(name, age, salary, bonus);
+    public Student(String name, int age, int id) {
+        super(name, age);
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getAddress() {
@@ -20,11 +26,15 @@ public class Executive extends Manager {
         address = new Address(houseNumber, street, city);
     }
 
-    @Override
     public void showInfo() {
-        super.showInfo();
-        if (address != null) {
+        System.out.println("Name: " + getName());
+        System.out.println("Age: " + getAge());
+        System.out.println("ID: " + id);
+        if (address != null)
             System.out.println(getAddress());
-        }
+    }
+
+    public void deleteAddress() {
+        address = null;
     }
 }
