@@ -5,8 +5,8 @@ import com.dat.chapter4_objectandclass.Address;
 public class Executive extends Manager {
     private Address address;
 
-    public Executive(String name, int age, int salary, int bonus) {
-        super(name, age, salary, bonus);
+    public Executive(String name, int age, Nationality nationality, int salary, int bonus) {
+        super(name, age, nationality, salary, bonus);
     }
 
     public String getAddress() {

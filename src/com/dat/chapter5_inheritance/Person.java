@@ -3,10 +3,12 @@ package com.dat.chapter5_inheritance;
 public abstract class Person {
     private String name;
     private int age;
+    private Nationality nationality;
 
-    public Person(String name, int age) {
+    public Person(String name, int age, Nationality nationality) {
         this.name = name;
         this.age = age;
+        this.nationality = nationality;
     }
 
     public String getName() {
@@ -25,16 +27,13 @@ public abstract class Person {
         this.age = age;
     }
 
-    public abstract void showInfo();
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        System.out.println(getClass());
-        Person p = (Person) obj;
-        return name.equals(p.name) && age == p.age;
+    public String getNationality() {
+        return nationality.getName();
     }
+
+    public void setNationality(Nationality nationality) {
+        this.nationality = nationality;
+    }
+
+    public abstract void showInfo();
 }

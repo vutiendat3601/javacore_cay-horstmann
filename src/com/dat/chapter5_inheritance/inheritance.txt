@@ -1,0 +1,5 @@
+1. Place common operations and fields in the superclass.
+2. Don’t use protected fields.
+3. Use inheritance to model the “is–a” relationship.
+4. Don’t use inheritance unless all inherited methods make sense.
+5. Don’t change the expected behavior when you override a method.

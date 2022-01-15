@@ -6,8 +6,8 @@ public class Student extends Person {
     private int id;
     private Address address;
 
-    public Student(String name, int age, int id) {
-        super(name, age);
+    public Student(String name, int age, Nationality nationality, int id) {
+        super(name, age, nationality);
         this.id = id;
     }
 

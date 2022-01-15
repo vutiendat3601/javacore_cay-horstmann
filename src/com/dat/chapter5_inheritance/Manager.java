@@ -4,8 +4,8 @@ public class Manager extends Employee {
 
     private int bonus;
 
-    public Manager(String name, int age, int salary, int bonus) {
-        super(name, age, salary);
+    public Manager(String name, int age, Nationality nationality, int salary, int bonus) {
+        super(name, age, nationality, salary);
         this.bonus = bonus;
     }
 
@@ -22,5 +22,13 @@ public class Manager extends Employee {
         super.showInfo();
         System.out.println("Bonus: " + bonus);
         System.out.println("Total salary: " + (super.getSalary() + bonus));
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (!super.equals(obj))
+            return false;
+        Manager m = (Manager) obj;
+        return bonus == m.bonus;
     }
 }
