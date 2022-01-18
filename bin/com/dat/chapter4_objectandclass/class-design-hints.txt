@@ -5,3 +5,8 @@
 5. Break up classes that have too many responsibilities
 6. Make the names of your classes and methods reflect their responsibilities
 7. Prefer immutable classes
+
+The most common relationships between classes are
+    - Dependence ("uses–a")
+    - Aggregation ("has–a")
+    - Inheritance ("is–a")

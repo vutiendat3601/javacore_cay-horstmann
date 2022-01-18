@@ -1,34 +1,27 @@
 package com.dat.chapter5_inheritance;
 
+import java.time.LocalDate;
+
+// inheritance hierarchy
+// inheritance chain
+// Manager is-a Employee
 public class Manager extends Employee {
+    private double bonus;
 
-    private int bonus;
+    // super is a keyword to initialize private attribute at superclass
+    public Manager(String name, double salary, LocalDate hireDay) {
+        super(name, salary, hireDay);
+    }
 
-    public Manager(String name, int age, Nationality nationality, int salary, int bonus) {
-        super(name, age, nationality, salary);
+    public void setBonus(double bonus) {
         this.bonus = bonus;
     }
 
-    public int getBonus() {
-        return bonus;
-    }
-
-    public void setBonus(int bonus) {
-        this.bonus = bonus;
-    }
-
+    // super only is only a keyword to invoke the superclass method
+    // in the other hand, super is different from this refference
     @Override
-    public void showInfo() {
-        super.showInfo();
-        System.out.println("Bonus: " + bonus);
-        System.out.println("Total salary: " + (super.getSalary() + bonus));
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (!super.equals(obj))
-            return false;
-        Manager m = (Manager) obj;
-        return bonus == m.bonus;
+    public double getSalary() {
+        double baseSalary = super.getSalary();
+        return baseSalary + bonus;
     }
 }

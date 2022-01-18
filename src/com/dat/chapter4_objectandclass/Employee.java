@@ -1,18 +1,28 @@
-package com.dat.chapter5_inheritance;
+package com.dat.chapter4_objectandclass;
 
 import java.time.LocalDate;
 
-// factoring out common functionality by moving it to a superclass 
-// is common in object-oriented programming
 public class Employee {
-    private String name = "";
+    // this is instance fields
+    private String name = ""; // this is explicit initialization
     private double salary;
-    private LocalDate hireDay;
 
-    public Employee(String name, double salary, LocalDate hireDay) {
+    // initialize block, before constructor
+    {
+        salary = 0;
+    }
+
+    // hireDay always be assigned when object is constructed
+    private final LocalDate hireDay;
+    public Employee(String name, LocalDate hireDay) {
         this.name = name;
-        this.salary = salary;
         this.hireDay = hireDay;
+    }
+
+    // A constructor is always called with the new operator
+    public Employee(String name, double salary, LocalDate hireDay) {
+        this(name, hireDay); // call another constructor, this's always in first line
+        this.salary = salary;
     }
 
     public String getName() {
@@ -31,6 +41,7 @@ public class Employee {
         System.out.println("Name: " + name);
         System.out.println("Hire day: " + hireDay.toString());
         System.out.println("Salary: " + salary);
+
     }
 
     public void raiseSalary(float percent) {

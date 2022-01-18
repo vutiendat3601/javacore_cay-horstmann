@@ -4,4 +4,4 @@
 4. Don’t use inheritance unless all inherited methods make sense.
 5. Don’t change the expected behavior when you override a method.
 6. Use polymorphism, not type information.
-7. Don’t overuse reflection.7. Don’t overuse reflection.
+7. Don’t overuse reflection.
