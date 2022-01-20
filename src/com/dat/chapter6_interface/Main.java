@@ -34,6 +34,7 @@ public class Main {
 
         // implementing interface by create a Anonymous class
         // and using lambda expression
+        // any captured variable in a lambda expression must be effectively final.
         FunctionalInterfaces functionalInterfaces = (name, age) -> System.out.println(name + " " + age);
         functionalInterfaces.show("Functinonal Interface: Vu Tien Dat", 20);
         new Predicates();
