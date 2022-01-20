@@ -18,6 +18,16 @@ public class OuterClass {
     }
 
     public static void main(String[] args) {
+
+        Named named = new Named() {
+
+            @Override
+            public void welcome() {
+                System.out.println("This is a Anonymous Inner class implementing Named interface");
+            }
+        };
+        named.welcome();
+
         OuterClass o = new OuterClass("Xin chao cac ban");
         Runnable run = o.new InnerClass();
         OuterClass.InnerClass inner = o.new InnerClass();

@@ -25,7 +25,9 @@ public class Files {
                 throw new EOFException("Do dai mang khong khop");
             scan.close();
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
+        } finally {
+            System.out.println("Using finally when work with buffer");
         }
         System.out.println("Ket thuc");
     }
